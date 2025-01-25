@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model EnvironmentalData {
+  id            Int      @id @default(autoincrement())
+  timestamp     DateTime @default(now())
+  temperature   Float
+  humidity      Float
+  soundIntensity Float
+  rainIntensity Float
+  co            Float
+  co2           Float
+  smoke         Float
+  nh3           Float
+  lpg           Float
+  benzene       Float
+  latitude      Float
+  longitude     Float
+}
