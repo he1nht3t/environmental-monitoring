@@ -23,6 +23,9 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Copy .nojekyll
+        run: cp .nojekyll ./out/
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
